@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visualizza</title>
+</head>
+<body>
+
+<table border="1">
+    <tr>
+        <th>Indice</th>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Età</th>
+    </tr>
+    <tbody id="tabella"></tbody>
+</table>
+
+<script>
+    var persone = JSON.parse(localStorage.getItem("persone"));
+    var tbody = document.getElementById("tabella");
+
+    for (var i = 0; i < persone.length; i++) {
+        var riga = "<tr>";
+        riga += "<td>" + persone[i].indice + "</td>";
+        riga += "<td>" + persone[i].nome + "</td>";
+        riga += "<td>" + persone[i].cognome + "</td>";
+        riga += "<td>" + persone[i].eta + "</td>";
+        riga += "</tr>";
+
+        tbody.innerHTML += riga;
+    }
+</script>
+
+</body>
+</html>
+
